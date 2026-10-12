@@ -18,4 +18,20 @@ public static class ArrayHelper
         }
         return -1;
     }
+
+    public static T[] Reverse<T>(T[] array)
+    {
+        T[] res = (T[])array.Clone();
+        int left = 0;
+        int right = res.Length - 1;
+        while (left < right)
+        {
+            T tmp = res[left];
+            res[left] = res[right];
+            res[right] = tmp;
+            left++;
+            right--;
+        }
+        return res;
+    }
 }
