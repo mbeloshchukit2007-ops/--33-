@@ -19,6 +19,32 @@ public static class ArrayHelper
         return -1;
     }
 
+    public static T Min<T>(T[] array) where T : IComparable<T>
+    {
+        T min = array[0];
+        for (int i = 1; i < array.Length; i++)
+        {
+            if (array[i].CompareTo(min) < 0)
+            {
+                min = array[i];
+            }
+        }
+        return min;
+    }
+
+    public static T Max<T>(T[] array) where T : IComparable<T>
+    {
+        T max = array[0];
+        for (int i = 1; i < array.Length; i++)
+        {
+            if (array[i].CompareTo(max) > 0)
+            {
+                max = array[i];
+            }
+        }
+        return max;
+    }
+
     public static T[] Reverse<T>(T[] array)
     {
         T[] res = (T[])array.Clone();
